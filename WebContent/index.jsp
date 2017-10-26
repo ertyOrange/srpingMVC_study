@@ -70,5 +70,8 @@ personName:<input type="text" name="name" value="Yang">
 <br><br>
 <a href="testRedirect">test Redirect</a>
 
+<br><br>
+<a href="emps">all  emps</a>
+
 </body>
 </html>
