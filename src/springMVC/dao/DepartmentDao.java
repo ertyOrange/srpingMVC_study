@@ -1,4 +1,4 @@
-package springMV.dao;
+package springMVC.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import springMV.entities.Department;
+import springMVC.entities.Department;
 @Repository
 public class DepartmentDao {
 	private static Map<Integer,Department> departments=null;
@@ -21,7 +21,7 @@ public class DepartmentDao {
 		
 	}
 	
-	public Collection<Department> getDepartment(){
+	public Collection<Department> getDepartments(){
 		return departments.values();
 	}
 	

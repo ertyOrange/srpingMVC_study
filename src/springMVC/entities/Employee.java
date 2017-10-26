@@ -1,4 +1,4 @@
-package springMV.entities;
+package springMVC.entities;
 
 public class Employee {
 	private Integer id;

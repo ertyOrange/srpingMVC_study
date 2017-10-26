@@ -1,4 +1,4 @@
-package springMV.dao;
+package springMVC.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import springMV.entities.Department;
-import springMV.entities.Employee;
+import springMVC.entities.Department;
+import springMVC.entities.Employee;
 @Repository
 public class EmployeeDao {
 	private static Map<Integer,Employee> employees=null;
