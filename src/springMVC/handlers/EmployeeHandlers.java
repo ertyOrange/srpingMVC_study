@@ -38,7 +38,7 @@ public class EmployeeHandlers {
 		return "redirect:/emps";
 	}
 	
-	@RequestMapping(value="emp",method=RequestMethod.GET)
+	@RequestMapping(value="/emp",method=RequestMethod.GET)
 	public String input(Map<String , Object> map){
 		map.put("departments", departmentDao.getDepartments());
 		map.put("employee", new Employee());

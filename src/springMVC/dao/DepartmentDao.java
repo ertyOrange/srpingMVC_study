@@ -13,12 +13,9 @@ public class DepartmentDao {
 	
 	static {
 		departments= new HashMap<Integer, Department>();
-		departments.put(1,new Department(1,"aa"));
-		departments.put(2,new Department(2,"bb"));
-		departments.put(3,new Department(1,"cc"));
-		departments.put(4,new Department(2,"dd"));
-		departments.put(5,new Department(1,"ee"));
-		
+		departments.put(1,new Department(1,"科技"));
+		departments.put(2,new Department(2,"技术"));
+		departments.put(3,new Department(3,"质量"));
 	}
 	
 	public Collection<Department> getDepartments(){

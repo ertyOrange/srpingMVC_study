@@ -20,7 +20,7 @@
 	若没有指定的属性，则从默认的request域对象中读取command 的表单的bean
 	如果属性值也不存在，就会发生错误
  -->
-	<form:form action="emp" method="post" modelAttribute="employee">
+	<form:form action="emp" method="POST" modelAttribute="employee">
 		<!-- path 属性对应HTML表单的name属性 -->
 		LastName :<form:input path="lastName" />
 		<br>
@@ -39,8 +39,8 @@
 		<form:radiobuttons path="gender" items="${genders}" delimiter="<br>"/>
 		<br>
 		<br>
-		Department:  <form:select path="department" items="${departments}"
-			itemLable="departmantName" itemValue="id" />
+		Department:  <form:select path="department.id" items="${departments}"
+			itemLabel="departmantName" itemValue="id" ></form:select>
 		<br>
 
 		<input type="submit" value="Submit">
