@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,9 +21,18 @@
 	若没有指定的属性，则从默认的request域对象中读取command 的表单的bean
 	如果属性值也不存在，就会发生错误
  -->
-	<form:form action="emp" method="POST" modelAttribute="employee">
+	<form:form action="${pageContext.request.contextPath}/emp" method="POST" modelAttribute="employee">
 		<!-- path 属性对应HTML表单的name属性 -->
+		
+		<c:if test="${employee.id ==null }">
 		LastName :<form:input path="lastName" />
+		</c:if>
+		<!-- -->
+		<c:if test="${employee.id !=null }">
+		<form:hidden path="id"/>
+		<input type="hidden" value="PUT" name="_method">
+		</c:if>
+		 
 		<br>
 		
 		Email :<form:input path="email" />

@@ -36,6 +36,10 @@ $(function(){
 	<form action="" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	</form>
+	
+	
+	
+	
 	<fmt:if test="${empty requestScope.employees}">
 	</fmt:if>
 	<fmt:if test="${!empty requestScope.employees}">
@@ -58,7 +62,7 @@ $(function(){
 					<th>${emp.email}</th>
 					<th>${emp.gender ==1 ? 'famale' :'male'}</th>
 					<th>${emp.department.departmantName}</th>
-					<th><a href="">Edit</a></th>
+					<th><a href="emp/${emp.id}">Edit</a></th>
 					<th><a class="delete" href="emp/${emp.id}">Delete</a></th>
 				</tr>
 			</fmt:forEach>
