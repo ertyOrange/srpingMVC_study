@@ -35,8 +35,6 @@ public class EmployeeHandlers {
 		}
 	}
 	
-	
-	
 	@RequestMapping("/emps")
 	public String list(Map<String , Object> empsMap) {
 		empsMap.put("employees",employeeDao.getAll());
