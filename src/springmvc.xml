@@ -7,14 +7,14 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
 	<!-- scan the package and the sub package -->
-	<context:component-scan base-package="springMVC" />
+	<context:component-scan base-package="Employee_crud,login,springMVC.handlers" />
 
 	<!-- don't handle the static resource -->
 	<mvc:default-servlet-handler />
 
-	<!-- if you use annotation you must configure following setting 
-	<mvc:annotation-driven />-->
-	
+	<!-- if you use annotation you must configure following setting <mvc:annotation-driven 
+		/> -->
+
 	<!-- configure the InternalResourceViewResolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -24,9 +24,12 @@
 		<!-- 后缀 -->
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!-- <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
-		<property name="basename" value="i18n"></property> </bean> 可以直接转发响应的页面 <mvc:view-controller 
-		view-name="test" path="SUECESS"></mvc:view-controller> -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="i18n"></property>
+	</bean>
+	<!-- 可以直接转发响应的页面 -->
+	<mvc:view-controller view-name="test" path="SUECESS"></mvc:view-controller>
 
 
 	<!-- 直接的转发可能会让之前的配置不起作用 需要配置下面的标签才可以正常的使用 -->

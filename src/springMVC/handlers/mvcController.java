@@ -1,9 +1,11 @@
-package springMVC;
+package springMVC.handlers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
  *
  */
 @Controller
-@SessionAttributes(value= {"person"},types={String.class})
+//@SessionAttributes(value= {"person"},types={String.class})
 public class mvcController {
 	private static final String SUCCESS = "test";
 	
@@ -50,11 +52,21 @@ public class mvcController {
 	 */
 	@ModelAttribute
 	public void getPerson(String name,Map<String, Object> map){
+		System.out.println(map.getClass().getSimpleName());;
+		
 		if(name!=null){
 		 Person person=	new Person("Erty", 11);
 		 System.out.println("get the person from db:"+person);
 		 map.put("person", person);
 		}
+	}
+	
+	
+	@RequestMapping("/topersion")
+	public String topersion(Person person) {
+		System.out.println("form person show :" + person);
+
+		return SUCCESS;
 	}
 	
 	//===========================================================
@@ -70,9 +82,10 @@ public class mvcController {
 	@RequestMapping(value="testSessionAttribute")
 	public String testSessionAttribute(Map<String , Object> map){
 		String view=SUCCESS;
-		Person person= new Person("yanghaoxiang", 26);
-		map.put("person", person);
-		map.put("persons", "persons");
+		Person a= new Person();
+//		Person person= new Person("yanghaoxiang", 26);
+//		map.put("person", person);
+		map.put("a", "persons");
 		return  view;
 		
 	}
@@ -82,18 +95,13 @@ public class mvcController {
 		return SUCCESS;
 	}
 
-	@RequestMapping("/topersion")
-	public String topersion(Person person) {
-		System.out.println("topersion :" + person);
 
-		return SUCCESS;
-	}
 
 	/*
 	 * headers 需要使用浏览器 才能获得header
 	 */
-	@RequestMapping(value = "/testParamsAndHeaders", params = { "userName!=name", "age!=10" })
-	// ,headers={"Accept-Language=zh-CN,zh;q=0.8"}
+	@RequestMapping(value = "/testParamsAndHeaders",headers={"Accept-Language=zh-CN,zh;q=0.8"})
+	  //params = { "userName!=name", "age!=10" })
 	public String testParamsAndHeaders(Person person) {
 		System.out.println("testParamsAndHeaders");
 
@@ -165,6 +173,20 @@ public class mvcController {
 		return "redirect:index.jsp";
 	}
 	
-
+	  @RequestMapping("/session/test/{id}/{name}")  
+	    public ModelAndView localsessionAttributes(@PathVariable Integer id,@PathVariable String name,HttpSession session){  
+	        session.setAttribute("currentUser", new Person(name, id));  
+	        ModelAndView mav = new ModelAndView("test");  
+	        return mav;  
+	    }  
+	  
+	  
+	  @RequestMapping("/session/attributes")  
+	    public ModelAndView sessionAttributesage(HttpSession session){  
+		  Person u = (Person)session.getAttribute("currentUser");  
+	        System.out.println(u.getName());  
+	        ModelAndView mav = new ModelAndView("test");  
+	        return mav;  
+	    }  
 	
 }

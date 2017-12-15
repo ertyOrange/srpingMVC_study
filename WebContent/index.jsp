@@ -49,11 +49,9 @@ province:<input type="text" name="address.province">
 <br><br>
 <a href="testSessionAttribute">testSessionAttribute</a>
 
+<br><br>
 
-
-
-
-
+<a href="exception">testexceptionHandle</a>
 
 
 <br><br>
@@ -70,8 +68,17 @@ personName:<input type="text" name="name" value="Yang">
 <br><br>
 <a href="testRedirect">test Redirect</a>
 
+
+<br><br>
+<a href="testRedirect">test Redirect</a>
+<br><br>
+<a href="session/test/11/erty"> test testHttpSession</a>
 <br><br>
 <a href="emps">all  emps</a>
+
+<br><br>
+
+<a href="book_input">book_input</a>
 
 </body>
 </html>

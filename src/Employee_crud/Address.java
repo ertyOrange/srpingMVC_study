@@ -1,4 +1,4 @@
-package springMVC;
+package Employee_crud;
 
 public class Address {
 	private String province;

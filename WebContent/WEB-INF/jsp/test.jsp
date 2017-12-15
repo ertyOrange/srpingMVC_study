@@ -54,7 +54,12 @@ testSessionAttribute--sessionScope.pserson: ${sessionScope.person}
 
 </fmt:if>
 
+<br><br>
+testHttpSession--sessionScope.pserson: ${sessionScope.currentUser} 
 
+
+<br><br>
+HelloWorldController--requestScope.attributeName: ${requestScope.attributeName} 
 
 
 </body>

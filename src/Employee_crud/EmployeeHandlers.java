@@ -5,7 +5,7 @@
  * @author yy263
  *
  */
-package springMVC.handlers;
+package Employee_crud;
 
 import java.util.Map;
 
@@ -16,10 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import springMVC.dao.DepartmentDao;
-import springMVC.dao.EmployeeDao;
-import springMVC.entities.Employee;
 
 @Controller
 public class EmployeeHandlers {
@@ -38,7 +34,7 @@ public class EmployeeHandlers {
 	@RequestMapping("/emps")
 	public String list(Map<String , Object> empsMap) {
 		empsMap.put("employees",employeeDao.getAll());
-		return "list";
+		return "Employee_crud/list";
 	}
 	
 	@RequestMapping(value="/emp" ,method=RequestMethod.POST)
@@ -57,14 +53,14 @@ public class EmployeeHandlers {
 	public String input(Map<String , Object> map){
 		map.put("departments", departmentDao.getDepartments());
 		map.put("employee", new Employee());
-		return "input";
+		return "Employee_crud/input";
 	}
 	
 	@RequestMapping(value="/emp/{id}",method=RequestMethod.GET)
 	public String input(@PathVariable(value = "id") Integer id,Map<String , Object> map){
 		map.put("departments", departmentDao.getDepartments());
 		map.put("employee", employeeDao.get(id));
-		return "input";
+		return "Employee_crud/input";
 	}
 	
 	
