@@ -13,7 +13,7 @@ public class AccountServiceImpl implements AccountService {
 	            account = new Account();  
 	            account.setId(1);  
 	            account.setUsername(username);  
-	            account.setPassWord(password);  
+	            account.setPassword(password);  
 	        }  
 	        return account;  
 	    }  
@@ -23,7 +23,7 @@ public class AccountServiceImpl implements AccountService {
 	        Account account = new Account();  
 	        account.setId(1);  
 	        account.setUsername("snowolf");  
-	        account.setPassWord("zlex");  
+	        account.setPassword("zlex");  
 	        return account;  
 	    }  
 

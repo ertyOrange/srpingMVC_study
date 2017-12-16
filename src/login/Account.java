@@ -7,13 +7,13 @@ public class Account implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int id ;
+	private Integer id ;
 	private String username;
-	private String passWord;
+	private String password;
 	public Account(int id) {
 		this.id = id;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -25,20 +25,20 @@ public class Account implements Serializable{
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getPassWord() {
-		return passWord;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public Account(int id, String username, String passWord) {
+	public Account(Integer id, String username, String passWord) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.passWord = passWord;
+		this.password = password;
 	}
 	public Account() {
 		super();

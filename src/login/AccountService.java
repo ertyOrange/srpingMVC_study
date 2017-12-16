@@ -10,4 +10,5 @@ public interface AccountService {
 	 * @return
 	 */
 	Account read(int id);
+
 }
