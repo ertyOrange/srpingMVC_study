@@ -21,7 +21,7 @@ public class AccountServiceImpl implements AccountService {
 	    @Override  
 	    public Account read(int id) {  
 	        Account account = new Account();  
-	        account.setId(1);  
+	        account.setId(id);  
 	        account.setUsername("snowolf");  
 	        account.setPassword("zlex");  
 	        return account;  

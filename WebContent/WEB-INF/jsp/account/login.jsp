@@ -7,21 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<fieldset>
-		<legend>登录</legend>
-		<form:form commandName="account" >
-			<form:hidden path="id" />
-			<ul>
-				<li><form:label path="username">用户名:</form:label>
-					<form:input path="username" /></li>
-				<li><form:label path="password">密码:</form:label>
-					<form:password path="password" /></li>
-				<li>
-					<button type="submit">登录</button>
-					<button type="reset">重置</button>
-				</li>
-			</ul>
-		</form:form>
-	</fieldset>
+	<fieldset><legend>登录</legend><form:form modelAttribute="account" action="${pageContext.request.contextPath}/login">  
+    <form:hidden path="id" />  
+    <ul>  
+        <li><form:label path="username">用户名:</form:label><form:input  
+            path="username" /></li>  
+        <li><form:label path="password">密码:</form:label><form:password  
+            path="password" /></li>  
+        <li>  
+        <button type="submit">登录</button>  
+        <button type="reset">重置</button>  
+        </li>  
+    </ul>  
+</form:form></fieldset>  
 </body>
 </html>

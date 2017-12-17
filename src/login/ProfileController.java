@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 	     */  
 	     
 	    @RequestMapping(method = RequestMethod.GET)  
-	    public String profile(@RequestParam("id") Integer id, ModelMap model) {  
+	    public String profile(@RequestParam(value="id",required = false) int id , ModelMap model) {  
 	        Account account = accountService.read(id);  
 	        model.addAttribute("account", account);  
 	  
