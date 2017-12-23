@@ -58,4 +58,20 @@ public class Book implements Serializable{
 		this.author = author;
 	}
 
+	
+	
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Book(long id, String isbn, String title, Category category, String author) {
+		super();
+		this.id = id;
+		this.isbn = isbn;
+		this.title = title;
+		this.category = category;
+		this.author = author;
+	}
+
 }

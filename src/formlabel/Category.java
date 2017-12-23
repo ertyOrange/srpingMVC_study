@@ -19,5 +19,14 @@ public class Category implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
+	public Category(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 }

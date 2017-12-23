@@ -9,4 +9,5 @@ public interface BookService {
 	public Book update (Book book);
 	public long getNexId();
 	public Book getById(long id);
+	public Category getCategory(int id);
 }

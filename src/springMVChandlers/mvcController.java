@@ -1,4 +1,4 @@
-package springMVC.handlers;
+package springMVChandlers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
