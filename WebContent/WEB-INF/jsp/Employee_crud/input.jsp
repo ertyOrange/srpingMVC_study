@@ -12,6 +12,18 @@
 </head>
 <body>
 
+<form action="testConversionserviceConnerter" method="post">
+	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-56     -->
+	employee:<input type="text" name="employee"/>
+	<input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<br>
+
+
+
+
 	<!-- 
 使用WHY标签
 1 ，可以快速的开发出表单
