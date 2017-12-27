@@ -1,4 +1,4 @@
-package Employee_crud;
+package employee_crud;
 
 import java.util.Collection;
 import java.util.HashMap;

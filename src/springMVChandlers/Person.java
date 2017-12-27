@@ -1,6 +1,6 @@
 package springMVChandlers;
 
-import Employee_crud.Address;
+import employee_crud.Address;
 
 public class Person {
 private String name;

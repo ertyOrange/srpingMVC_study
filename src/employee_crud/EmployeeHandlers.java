@@ -5,7 +5,7 @@
  * @author yy263
  *
  */
-package Employee_crud;
+package employee_crud;
 
 import java.util.Map;
 

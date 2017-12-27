@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<!-- 
 使用WHY标签
 1 ，可以快速的开发出表单
@@ -46,6 +47,16 @@
 		<br>
 		Gender: 
 		<br>
+		<!--  
+			1 数据类型转换的
+			2 数据类型格式化
+			3 数据校验
+		
+		
+		<br>
+		Birth:<form:input path="birth"/>
+		<br>
+		-->
 		<form:radiobuttons path="gender" items="${genders}" delimiter="<br>"/>
 		<br>
 		<br>

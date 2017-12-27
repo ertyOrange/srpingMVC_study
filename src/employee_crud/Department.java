@@ -1,4 +1,4 @@
-package Employee_crud;
+package employee_crud;
 
 public class Department {
 	private Integer id;

@@ -1,20 +1,27 @@
-package Employee_crud;
+package employee_crud;
+
+import java.util.Date;
 
 public class Employee {
 	private Integer id;
 	private String lastName;
 	private String email;
 	private String gender;
+	private Date birth;
 	
 	private Department department;
-	public Employee(Integer id, String lastName, String email, String gender, Department department) {
+	
+	public Employee(Integer id, String lastName, String email, String gender2, Date birth, Department department) {
 		super();
 		this.id = id;
 		this.lastName = lastName;
 		this.email = email;
-		this.gender = gender;
+		this.gender = gender2;
+		this.birth = birth;
 		this.department = department;
 	}
+
+
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -50,6 +57,19 @@ public class Employee {
 	}
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+	public Date getBirth() {
+		return birth;
+	}
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", lastName=" + lastName + ", email=" + email + ", gender=" + gender + ", birth="
+				+ birth + ", department=" + department + "]";
 	}
 	
 	
