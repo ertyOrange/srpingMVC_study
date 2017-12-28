@@ -13,7 +13,7 @@
 <body>
 
 <form action="testConversionserviceConnerter" method="post">
-	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-56     -->
+	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-1991-09-09     -->
 	employee:<input type="text" name="employee"/>
 	<input type="submit" value="Submit">
 </form>
