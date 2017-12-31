@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<form action="testConversionserviceConnerter" method="post">
-	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-1991-09-09     -->
+<form action="${pageContext.request.contextPath}/testConversionserviceConnerter" method="POST">
+	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-19910909     -->
 	employee:<input type="text" name="employee"/>
 	<input type="submit" value="Submit">
 </form>

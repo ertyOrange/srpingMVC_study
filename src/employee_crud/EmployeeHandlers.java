@@ -31,7 +31,7 @@ public class EmployeeHandlers {
 		}
 	}
 	
-	@RequestMapping("/emps")
+	@RequestMapping(value="/emps")
 	public String list(Map<String , Object> empsMap) {
 		empsMap.put("employees",employeeDao.getAll());
 		return "Employee_crud/list";
