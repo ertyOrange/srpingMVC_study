@@ -2,11 +2,16 @@ package employee_crud;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.InitBinder;
+
 public class Employee {
 	private Integer id;
 	private String lastName;
 	private String email;
 	private String gender;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birth;
 	
 	private Department department;

@@ -20,7 +20,7 @@ public class conversionServiceTest {
 		System.out.println("save:"+employee);
 		employeeDao.save(employee);
 		
-		return "emps";
+		return "redirect:/emps";
 	}
 
 	public EmployeeDao getEmployeeDao() {

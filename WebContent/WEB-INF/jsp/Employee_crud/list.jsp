@@ -50,6 +50,7 @@ $(function(){
 				<th>Email</th>
 				<th>Gender</th>
 				<th>Department</th>
+				<th>birthDate</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
@@ -62,6 +63,7 @@ $(function(){
 					<th>${emp.email}</th>
 					<th>${emp.gender ==1 ? 'famale' :'male'}</th>
 					<th>${emp.department.departmantName}</th>
+					<th>${emp.birth}</th>
 					<th><a href="emp/${emp.id}">Edit</a></th>
 					<th><a class="delete" href="emp/${emp.id}">Delete</a></th>
 				</tr>

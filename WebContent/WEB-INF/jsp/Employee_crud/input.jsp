@@ -12,14 +12,16 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/testConversionserviceConnerter" method="POST">
-	<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-19910909     -->
-	employee:<input type="text" name="employee"/>
-	<input type="submit" value="Submit">
-</form>
-<br>
-<br>
-<br>
+	<form
+		action="${pageContext.request.contextPath}/testConversionserviceConnerter"
+		method="POST">
+		<!-- lastName-email-gender-birth eg:yang-26337442@qq.com-0-19910909     -->
+		employee:<input type="text" name="employee" /> <input type="submit"
+			value="Submit">
+	</form>
+	<br>
+	<br>
+	<br>
 
 
 
@@ -34,18 +36,19 @@
 	若没有指定的属性，则从默认的request域对象中读取command 的表单的bean
 	如果属性值也不存在，就会发生错误
  -->
-	<form:form action="${pageContext.request.contextPath}/emp" method="POST" commandName="employee">
+	<form:form action="${pageContext.request.contextPath}/emp"
+		method="POST" commandName="employee">
 		<!-- path 属性对应HTML表单的name属性 -->
-		
+
 		<c:if test="${employee.id ==null }">
 		LastName :<form:input path="lastName" />
 		</c:if>
 		<!-- -->
 		<c:if test="${employee.id !=null }">
-		<form:hidden path="id"/>
-		<input type="hidden" value="PUT" name="_method">
+			<form:hidden path="id" />
+			<input type="hidden" value="PUT" name="_method">
 		</c:if>
-		 
+
 		<br>
 		
 		Email :<form:input path="email" />
@@ -56,24 +59,23 @@
 				genders.put("1", "Female");
 				request.setAttribute("genders", genders);
 		%>
-		<br>
-		Gender: 
-		<br>
+
 		<!--  
 			1 数据类型转换的
 			2 数据类型格式化
 			3 数据校验
-		
-		
-		<br>
-		Birth:<form:input path="birth"/>
-		<br>
 		-->
-		<form:radiobuttons path="gender" items="${genders}" delimiter="<br>"/>
+		<br>
+		Birth:<form:input path="birth" items="${birth}" />
+		<br>
+		<br>
+		Gender: 
+		<br>
+		<form:radiobuttons path="gender" items="${genders}" delimiter="<br>" />
 		<br>
 		<br>
 		Department:  <form:select path="department.id" items="${departments}"
-			itemLabel="departmantName" itemValue="id" ></form:select>
+			itemLabel="departmantName" itemValue="id"></form:select>
 		<br>
 
 		<input type="submit" value="Submit">
