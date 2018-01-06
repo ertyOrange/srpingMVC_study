@@ -53,13 +53,7 @@
 		
 		Email :<form:input path="email" />
 		<br>
-		<%
-			Map<String, String> genders = new HashMap();
-				genders.put("0", "Male");
-				genders.put("1", "Female");
-				request.setAttribute("genders", genders);
-		%>
-
+		<form:errors path="email" />
 		<!--  
 			1 数据类型转换的
 			2 数据类型格式化
@@ -68,11 +62,23 @@
 		<br>
 		Birth:<form:input path="birth" items="${birth}" />
 		<br>
+		<form:errors path="birth" />
+		<br>
+		salary:<form:input path="salary" items="${salary}" />
+		<br>
+		<form:errors path="salary" />
 		<br>
 		Gender: 
 		<br>
+		<%
+			Map<String, String> genders = new HashMap();
+				genders.put("0", "Male");
+				genders.put("1", "Female");
+				request.setAttribute("genders", genders);
+		%>
 		<form:radiobuttons path="gender" items="${genders}" delimiter="<br>" />
 		<br>
+		<form:errors path="gender" />
 		<br>
 		Department:  <form:select path="department.id" items="${departments}"
 			itemLabel="departmantName" itemValue="id"></form:select>

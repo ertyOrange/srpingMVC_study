@@ -9,8 +9,12 @@ package employee_crud;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +42,18 @@ public class EmployeeHandlers {
 	}
 	
 	@RequestMapping(value="/emp" ,method=RequestMethod.POST)
-	public String save(Employee employee) {
+	public String save(@Valid Employee employee,BindingResult value,Map<String ,Object>map) {
+		System.out.println(employee);
+		if(value.getErrorCount()>0){
+			System.out.println("出错了");
+			for(FieldError error: value.getFieldErrors()){
+				System.out.println(error.getField()+":"+error.getDefaultMessage());
+			}
+			//如果验证出错转到指定的页面
+			map.put("departments", departmentDao.getDepartments());
+			return "Employee_crud/input";
+		}
+		
 		employeeDao.save(employee);
 		return "redirect:/emps";
 	}

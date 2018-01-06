@@ -2,27 +2,53 @@ package employee_crud;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.format.annotation.NumberFormat;
 
 public class Employee {
 	private Integer id;
+	@NotEmpty
 	private String lastName;
+	@Email
 	private String email;
 	private String gender;
-	
+	@Past
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birth;
+	@NumberFormat(pattern="#,###,###.#")
+	private Float salary;
+	
+	
 	
 	private Department department;
 	
-	public Employee(Integer id, String lastName, String email, String gender2, Date birth, Department department) {
+	
+
+
+	public Employee(Integer id, String lastName, String email, String gender, Date birth, Department department) {
 		super();
 		this.id = id;
 		this.lastName = lastName;
 		this.email = email;
-		this.gender = gender2;
+		this.gender = gender;
 		this.birth = birth;
+		this.department = department;
+	}
+
+
+	public Employee(Integer id, String lastName, String email, String gender, Date birth, Float salary,
+			Department department) {
+		super();
+		this.id = id;
+		this.lastName = lastName;
+		this.email = email;
+		this.gender = gender;
+		this.birth = birth;
+		this.salary = salary;
 		this.department = department;
 	}
 
@@ -71,11 +97,21 @@ public class Employee {
 	}
 
 
+	public Float getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(Float salary) {
+		this.salary = salary;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", lastName=" + lastName + ", email=" + email + ", gender=" + gender + ", birth="
-				+ birth + ", department=" + department + "]";
+				+ birth + ", salary=" + salary + ", department=" + department + "]";
 	}
-	
+
 	
 }
