@@ -15,7 +15,7 @@ $(function (){
 			for (var i =0;i<data.length;i++){
 				var id =data[i].id;
 				var lastName=data[i].lastName;
-				alter(id+":"+lastName);
+				alert(id+":"+lastName);
 			}
 		});
 		return false;
