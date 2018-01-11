@@ -3,10 +3,14 @@ package springMVChandlers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.jni.Local;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,7 +34,8 @@ import org.springframework.web.servlet.ModelAndView;
 //@SessionAttributes(value= {"person"},types={String.class})
 public class mvcController {
 	private static final String SUCCESS = "test";
-	
+	@Autowired
+	private ResourceBundleMessageSource messageSource;
 	
 	@RequestMapping("helowMyView")
 	public String testView(){
@@ -63,9 +68,10 @@ public class mvcController {
 	
 	
 	@RequestMapping("/topersion")
-	public String topersion(Person person) {
+	public String topersion(Person person,Locale locale) {
 		System.out.println("form person show :" + person);
-
+		String val= messageSource.getMessage("i18n.username", null, locale);
+		System.out.println(val);
 		return SUCCESS;
 	}
 	

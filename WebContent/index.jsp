@@ -90,7 +90,9 @@ personName:<input type="text" name="name" value="Yang">
 
 <br><br>
 <a href="testRedirect">test Redirect</a>
+<br><br>
 
+<a href="book_input">book_input</a>
 
 <br><br>
 <a href="testRedirect">test Redirect</a>
@@ -99,9 +101,18 @@ personName:<input type="text" name="name" value="Yang">
 <br><br>
 <a href="emps">all  emps</a>
 
+
+
+<br><br>
+<form action="testHttpMessageConverter" method="post" enctype="multipart/form-data">
+File :<input type="file" name="file"/>
+Desc :<input type="text" name="desc"/>
+<input type="submit" value="Submit">
+</form>
+
 <br><br>
 
-<a href="book_input">book_input</a>
+<a href="testtestResponseEntity">testtestResponseEntity</a>
 
 </body>
 </html>
