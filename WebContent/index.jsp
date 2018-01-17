@@ -114,5 +114,10 @@ Desc :<input type="text" name="desc"/>
 
 <a href="testtestResponseEntity">testtestResponseEntity</a>
 
+
+<br><br>
+
+<a href="file/toUpload">UploadController</a>
+
 </body>
 </html>
