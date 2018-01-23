@@ -15,8 +15,8 @@
 	<context:component-scan base-package="springMVChandlers" />
 	<context:component-scan base-package="formlabel" />
 	<context:component-scan base-package="employee_crud_converter" />
-	
-	<context:component-scan base-package="fileupload"/>
+
+	<context:component-scan base-package="fileupload" />
 
 
 	<!-- don't handle the static resource 也需要mvc:annotation-driven 标签 -->
@@ -42,7 +42,23 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
 
 	<mvc:interceptors>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/emps" />
+			<bean class="interceptor.firstInterceptor" />
+		</mvc:interceptor>
+
+
+		<mvc:interceptor>
+			<mvc:mapping path="/testJson" />
+			<bean class="interceptor.secondInterceptor" />
+		</mvc:interceptor>
+
+
+
+
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+
 	</mvc:interceptors>
 	<!-- 配置自己的视图解析器 使用的视图的名字来解析 <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"> 
 		<property name="order" value="100"></property> </bean> -->
