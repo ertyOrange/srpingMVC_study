@@ -15,6 +15,7 @@
 	<context:component-scan base-package="springMVChandlers" />
 	<context:component-scan base-package="formlabel" />
 	<context:component-scan base-package="employee_crud_converter" />
+	<!-- spring 非注解的监听 -->	
 	<context:component-scan base-package="springEvent" />
 	
 
