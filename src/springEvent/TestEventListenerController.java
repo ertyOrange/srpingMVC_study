@@ -12,6 +12,6 @@ public class TestEventListenerController {
 
     @RequestMapping(value = "/test/testPublishEvent1" )
     public void testPublishEvent(){
-        publisher.pushListener("msg");
+        publisher.pushListener("erty's test for spring event");
     }
 }
