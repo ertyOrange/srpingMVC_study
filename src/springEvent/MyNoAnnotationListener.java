@@ -11,5 +11,7 @@ public class MyNoAnnotationListener implements ApplicationListener<MyTestEvent> 
 		System.out.println("·Ç×¢½â¼àÌýÆ÷£º" + arg0.getMsg());
 
 	}
+	
+
 
 }

@@ -10,7 +10,7 @@ public class TestEventListenerController {
     @Autowired
     private MyTestEventPubLisher publisher;
 
-    @RequestMapping(value = "/test/testPublishEvent1" )
+    @RequestMapping(value = "/testPublishEvent1" )
     public void testPublishEvent(){
         publisher.pushListener("erty's test for spring event");
     }
